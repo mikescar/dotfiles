@@ -6,8 +6,8 @@ No script to create/modify/remove symlinks, or to sync a file list. I've read to
 
 To keep your local copies up to date, just run *copy* from your home directory:
 
-`mikescar@host:~ $ git clone git@github.com:mikescar/dotfiles.git
+`mikescar@host:~ $ git clone git@github.com:mikescar/dotfiles.git`
 
-mikescar@host:~ $ cp -Ruv .dotfiles/files/* .`
+`mikescar@host:~ $ cp -Ruv .dotfiles/files/* .`
 
 That's it. Maybe a clever script later if this becomes unwieldy.
