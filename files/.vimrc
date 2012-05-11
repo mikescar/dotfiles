@@ -1,4 +1,4 @@
-" Modeline and Notes 
+" Modeline and Notes
 " vim: set foldmarker={,} foldlevel=0 foldmethod=marker spell:
 " Parts taken from https://github.com/spf13/spf13-vim/
 
@@ -17,7 +17,7 @@ syntax on					" syntax highlighting
 filetype plugin indent on	" Automatically detect file types.
 
 " Backup and undo
-set backup			" enable backups 
+set backup			" enable backups
 set undofile		" enable persistent undo
 set undolevels=1000	" maximum number of changes that can be undone
 set undoreload=10000	" maximum number lines to save for undo on a buffer reload
@@ -42,14 +42,17 @@ nnoremap k gk
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
-" ctags: look in the current directory for 'tags', and work up the tree towards root until one is found. 
+" ctags: look in the current directory for 'tags', and work up the tree towards root until one is found.
 set tags=./tags;/,$HOME/.vimtags
 " C-\ - Open the definition in a new tab
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> 
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " A-] - Open the definition in a vertical split
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>      
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
-" Use local vimrc if available 
+" Autocmd actions
+autocmd BufWritePre * :%s/\s\+$//e	" remove trailing whitespace on save
+
+" Use local vimrc if available
 if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
