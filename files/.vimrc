@@ -11,16 +11,12 @@ set nu				" show line numbers (:set nonu to turn off)
 set showmode		" display current mode
 set ruler			" show the ruler
 
+call pathogen#infect() " load pathogen
+
 " Filetypes
 scriptencoding utf-8
 syntax on					" syntax highlighting
 filetype plugin indent on	" Automatically detect file types.
-
-" Backup and undo
-set backup			" enable backups
-set undofile		" enable persistent undo
-set undolevels=1000	" maximum number of changes that can be undone
-set undoreload=10000	" maximum number lines to save for undo on a buffer reload
 
 " Search options
 set incsearch		" find as you type search
