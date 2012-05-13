@@ -4,18 +4,24 @@
 
 " GUI preferences
 set nocompatible	" do not use vi compatibility mode; must be first line
-set background=dark	" Assume a dark background
-"color solarized	" Color Scheme
+
+call pathogen#infect()		" load pathogen
 set showmatch		" show matching brackets and parenthesis
 set nu				" show line numbers (:set nonu to turn off)
 set showmode		" display current mode
 set ruler			" show the ruler
+syntax enable		" syntax highlighting
 
-call pathogen#infect() " load pathogen
+" Colors
+set background=dark	" Assume a dark background
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized	" Color Scheme
 
 " Filetypes
 scriptencoding utf-8
-syntax on					" syntax highlighting
 filetype plugin indent on	" Automatically detect file types.
 
 " Search options
