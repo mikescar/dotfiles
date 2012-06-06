@@ -87,8 +87,7 @@ alias gx='gitx --all'
 alias gsr='git svn rebase'
 alias gsf='git svn fetch'
 alias gcp='git cherry-pick'
-alias dotconfig='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
-
+alias gph='git push heroku'
 
 # SVN URIs
 SVN=svn+ssh://mojo2/data/svn/dev
@@ -156,3 +155,12 @@ ssh $myHost
 source ~/.bashrc
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+##
+# Your previous /Users/mikescar/.bash_profile file was backed up as /Users/mikescar/.bash_profile.macports-saved_2012-05-23_at_09:39:15
+##
+
+# MacPorts Installer addition on 2012-05-23_at_09:39:15: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
