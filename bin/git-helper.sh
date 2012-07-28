@@ -413,7 +413,20 @@ function check-images {
 }
 
 
+# Find (hopefully) all instances of PHP functions in a git repository.
+#
+#   It's best to pipe this into less
+#
+#   Example: looking for function fooBar() or 'foobar ()'
+#
+#   Type: `git-check-methods 'function string'
+#
+#   Returns: filename of class files with line number for matching function
+#
 function git-check-methods {
+
+	# functions to ignore in searches
+	excluded=( __construct __destruct initialize select update delete setId getId)
 
 	# set input field separator $IFS to end-of-line
 	ORIGIFS=$IFS
@@ -427,9 +440,6 @@ function git-check-methods {
 		unused=0;
 		file=$1
 	fi
-
-	excluded=( __construct __destruct initialize select update delete setId getId)
-
 	for i in `egrep -o "function [A-Za-z0-9_]+\W*\(" $file | awk '{print $2}' | sed 's/($//'`
 	do
 		runGrep=1;
