@@ -88,6 +88,7 @@ alias gsr='git svn rebase'
 alias gsf='git svn fetch'
 alias gcp='git cherry-pick'
 alias gph='git push heroku'
+alias gr='cd $(git rev-parse --show-cdup)'
 
 # SVN URIs
 SVN=svn+ssh://mojo2/data/svn/dev
