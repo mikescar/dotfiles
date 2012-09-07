@@ -55,9 +55,7 @@ alias egrep='egrep --color'
 alias hgrep='history 1000 | grep '
 alias k9='kill -9'
 alias l='less'
-alias Less='less'
-alias L='less'
-alias ll='ls -lah'
+alias ll='ls -lahp'
 #alias less='less -IgMN -x4'
 alias psg='ps aux | grep -i'
 alias sit='source ~/.bashrc'
@@ -89,13 +87,6 @@ alias gsf='git svn fetch'
 alias gcp='git cherry-pick'
 alias gph='git push heroku'
 alias gr='cd $(git rev-parse --show-cdup)'
-
-# SVN URIs
-SVN=svn+ssh://mojo2/data/svn/dev
-SVNROOT=svn+ssh://mojo2/data/svn/dev/associatedcontent.com
-BRANCH=svn+ssh://mojo2/data/svn/dev/associatedcontent.com/branches
-TAGS=svn+ssh://mojo2/data/svn/dev/associatedcontent.com/tags
-TRUNK=svn+ssh://mojo2/data/svn/dev/associatedcontent.com/trunk
 
 # save a lot of history
 HISTFILESIZE=1000000
@@ -149,10 +140,6 @@ fi
 ssh $myHost
 }
 
-#====================================
-
-# vim:ts=4:sw=4
-
 source ~/.bashrc
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -164,4 +151,3 @@ source ~/.bashrc
 # MacPorts Installer addition on 2012-05-23_at_09:39:15: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
-
