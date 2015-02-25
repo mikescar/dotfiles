@@ -19,6 +19,7 @@ let g:solarized_termtrans=1
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized	" Color Scheme
+highlight LineNr ctermfg=white ctermbg=black
 
 " Filetypes
 scriptencoding utf-8
