@@ -26,10 +26,10 @@ case $TERM in
 xterm*)
 if [ `declare -F __git_ps1` ]
 then
-	PS1="\[\033[01;32m\]\u \t${RESET}:${CYAN}\w ${WHITE}\$(__git_ps1 '(%s)')${RESET}\$ "
+	PS1="\[\033[01;32m\]\u@\h \t${RESET}:${CYAN}\w ${WHITE}\$(__git_ps1 '(%s)')${RESET}\$ "
 	GIT_PS1_SHOWDIRTYSTATE=1
 else
-	PS1="\[\033[01;32m\]\u \t${RESET}:${CYAN}\w ${WHITE}\$ "
+	PS1="\[\033[01;32m\]\u@\h \t${RESET}:${CYAN}\w ${WHITE}\$ "
 fi
 ;;
 *)
