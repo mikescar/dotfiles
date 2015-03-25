@@ -26,10 +26,10 @@ case $TERM in
 xterm*)
 if [ `declare -F __git_ps1` ]
 then
-	PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:${CYAN}\w ${WHITE}\$(__git_ps1 '(%s)')${RESET}\$ "
+	PS1="\[\033[01;32m\]\u \t${RESET}:${CYAN}\w ${WHITE}\$(__git_ps1 '(%s)')${RESET}\$ "
 	GIT_PS1_SHOWDIRTYSTATE=1
 else
-	PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:${CYAN}\w ${WHITE}\$ "
+	PS1="\[\033[01;32m\]\u \t${RESET}:${CYAN}\w ${WHITE}\$ "
 fi
 ;;
 *)
@@ -56,19 +56,18 @@ alias hgrep='history 1000 | grep '
 alias k9='kill -9'
 alias l='less'
 alias ll='ls -lahp'
-#alias less='less -IgMN -x4'
 alias psg='ps aux | grep -i'
-alias sit='source ~/.bashrc'
+alias sit='source ~/.bash_profile'
 alias tailsql='tail -fn600 /home/y/logs/yapache/sql_error'
 alias tailweb='tail -fn600 /home/y/logs/yapache/php_error'
 alias tailroute='tail -fn600 /home/y/logs/yapache/route_error'
 alias uname='uname -a'
 alias vi='/usr/bin/vim'
-alias yssh='profilepush'
-
-# SVN aliases
-alias sup='svn up'
-alias sl='svn log --stop-on-copy'
+alias mysqlstart='sudo launchctl load /Library/LaunchDaemons/org.macports.mysql55-server.plist'
+alias mysqlstop='sudo launchctl unload /Library/LaunchDaemons/org.macports.mysql55-server.plist'
+alias mysqlrestart='mysqlstop && mysqlstart'
+alias tarz='tar zxvpf'
+alias portupdate='sudo port selfupdate; sudo port upgrade outdated'
 
 # git helper bash functions and aliases
 alias gs='git status '
@@ -80,7 +79,7 @@ alias gd='git diff -p --stat'
 alias gg='git grep'
 alias ggi='git grep -i'
 alias gl='git lg'
-alias go='git checkout '
+alias gll='git lc | grep -vi "merge"'
 alias gx='gitx --all'
 alias gsr='git svn rebase'
 alias gsf='git svn fetch'
@@ -95,59 +94,11 @@ HISTSIZE=10000
 # gpg key
 export GPGKEY=489265C3
 
-#====================================
-# Alan's profile pusher
-
-# Timestamp to check against for updating remote hosts
-#profilepush:SERIAL:1299603454
-
-# Add additional files with #profilepush:FILE:<filename>
-#profilepush:FILE:.bash_profile
-#profilepush:FILE:.bashrc
-#profilepush:FILE:.colors
-#profilepush:FILE:.vimrc
-#profilepush:FILE:.my.cnf
-#profilepush:FILE:bin/git-completion.sh
-#profilepush:FILE:bin/git-helper.sh
-
-# Sync Function
-profilepush () {
-
-myHost=$1
-
-# List of remote hosts that are checked to prevent rsyncing every login
-PUSH_HOME_HOSTS="$HOME/.home_version_hosts"
-
-remoteVersion=0
-localVersion=`grep "^#profilepush:SERIAL:" ~/.bashrc | awk 'BEGIN{FS=":"}{print $3}'`
-
-if [ -d $PUSH_HOME_HOSTS/$myHost ]
-then
-if [ -f $PUSH_HOME_HOSTS/$myHost ]
-then
-remoteVersion=`cat $PUSH_HOME_HOSTS/$myHost`
-fi
-else
-mkdir $PUSH_HOME_HOSTS
-fi
-
-if [ $remoteVersion -lt $localVersion ]
-then
-myFiles=`grep "^#profilepush:FILE:" ~/.bashrc | awk 'BEGIN{FS=":"}{print $3}'`
-( cd ; echo "$myFiles" | rsync -av --include-from=- --exclude=* . $myHost: )  && echo "$localVersion" > $PUSH_HOME_HOSTS/$myHost
-fi
-
-ssh $myHost
-}
-
 source ~/.bashrc
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-##
-# Your previous /Users/mikescar/.bash_profile file was backed up as /Users/mikescar/.bash_profile.macports-saved_2012-05-23_at_09:39:15
-##
+source ~/.profile
 
 # MacPorts Installer addition on 2012-05-23_at_09:39:15: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/apache2/bin:/opt/local/lib/php:/opt/local/lib/php/pear/bin:/opt/local/lib/mysql55/bin:/opt/local/lib/postgresql94/bin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
