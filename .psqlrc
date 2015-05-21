@@ -1,0 +1,8 @@
+\set PROMPT1 '%M %n@%/%R%# '
+\set PROMPT2 '[more] %R > '
+\set HISTSIZE 10000
+
+\pset pager off
+\pset null '(null)'
+
+\timing
