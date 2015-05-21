@@ -86,6 +86,9 @@ alias gsf='git svn fetch'
 alias gcp='git cherry-pick'
 alias gph='git push heroku'
 alias gr='cd $(git rev-parse --show-cdup)'
+alias updatedb="sudo /usr/libexec/locate.updatedb"
+alias psql="psql -U postgres "
+
 
 # save a lot of history
 HISTFILESIZE=1000000
