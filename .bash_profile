@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 export EDITOR=/usr/bin/vim
+export PAGER=/usr/bin/less
 
 # convenience settings & functions
 . ~/bin/.colors
@@ -89,7 +90,6 @@ alias gr='cd $(git rev-parse --show-cdup)'
 alias updatedb="sudo /usr/libexec/locate.updatedb"
 alias psql="psql -U postgres "
 
-
 # save a lot of history
 HISTFILESIZE=1000000
 HISTSIZE=10000
@@ -98,10 +98,6 @@ HISTSIZE=10000
 export GPGKEY=489265C3
 
 source ~/.bashrc
-source ~/.profile
-
-# MacPorts Installer addition on 2012-05-23_at_09:39:15: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/apache2/bin:/opt/local/lib/php:/opt/local/lib/php/pear/bin:/opt/local/lib/mysql55/bin:/opt/local/lib/postgresql94/bin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
+PATH=$PATH:~/bin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql93/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
