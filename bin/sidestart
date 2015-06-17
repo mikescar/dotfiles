@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bundle exec sidekiq -c 10 -q contract,11 -q search,10 -q default,9 -q whenever,1 -q extended_search

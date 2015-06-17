@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#kill -9 $(ps -ef | grep sidekiq | grep -v grep | cut -c7-13)
+kill -9 $(ps aux | grep sidekiq | grep -v grep | awk '{print $2}')
