@@ -47,14 +47,14 @@ xterm*|rxvt*)
     ;;
 esac
 
-# some more aliases
+
 alias cdp='cd -P'
 alias cl='clear'
 alias df='df -h'
 alias du='du -sch'
 alias egrep='egrep --color'
 alias hgrep='history 1000 | grep '
-alias pgrep='ps aux | grep '
+alias psgrep='ps aux | grep '
 alias k9='kill -9'
 alias l='less'
 alias ll='ls -lahp'
@@ -75,7 +75,6 @@ alias tarz='tar zxvpf'
 alias portupdate='sudo port selfupdate; sudo port upgrade outdated'
 alias updatedb="sudo /usr/libexec/locate.updatedb"
 alias psql="psql -U postgres "
-
 # git
 alias gs='git status '
 alias ga='git add '
