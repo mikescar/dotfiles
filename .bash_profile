@@ -54,6 +54,7 @@ alias df='df -h'
 alias du='du -sch'
 alias egrep='egrep --color'
 alias hgrep='history 1000 | grep '
+alias pgrep='ps aux | grep '
 alias k9='kill -9'
 alias l='less'
 alias ll='ls -lahp'
@@ -67,10 +68,15 @@ alias vi='/usr/bin/vim'
 alias mysqlstart='sudo launchctl load /Library/LaunchDaemons/org.macports.mysql55-server.plist'
 alias mysqlstop='sudo launchctl unload /Library/LaunchDaemons/org.macports.mysql55-server.plist'
 alias mysqlrestart='mysqlstop && mysqlstart'
+alias memstart='sudo launchctl load -w /Library/LaunchDaemons/org.macports.memcached.plist'
+alias memstop='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.memcached.plist'
+alias memrestart='memstop && memstart'
 alias tarz='tar zxvpf'
 alias portupdate='sudo port selfupdate; sudo port upgrade outdated'
+alias updatedb="sudo /usr/libexec/locate.updatedb"
+alias psql="psql -U postgres "
 
-# git helper bash functions and aliases
+# git
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
@@ -86,9 +92,8 @@ alias gsr='git svn rebase'
 alias gsf='git svn fetch'
 alias gcp='git cherry-pick'
 alias gph='git push heroku'
+# git root dir
 alias gr='cd $(git rev-parse --show-cdup)'
-alias updatedb="sudo /usr/libexec/locate.updatedb"
-alias psql="psql -U postgres "
 
 # save a lot of history
 HISTFILESIZE=1000000
