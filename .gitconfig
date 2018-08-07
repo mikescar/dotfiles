@@ -1,12 +1,17 @@
 [user]
-	name = Mike Scarborough
-	email = mike@mikescar.net
+	name = mikescar
+	email = mike@tenthpeak.us
 [alias]
-	co = checkout
-	ci = commit
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	l  = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	cs = commit -s
+    co = checkout
+    ci = commit
+    csv = log --date=iso --pretty=format:'"%an","%ad","%s"'
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l  = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lc  = log --pretty=format:' -%d %s' --abbrev-commit --date=relative
+    cs = commit -s
+    assume   = update-index --assume-unchanged
+    unassume = update-index --no-assume-unchanged
+    assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
 [color]
   branch = auto
   diff = auto
@@ -25,3 +30,7 @@
   changed = green
   untracked = cyan
 
+[push]
+    default = simple
+[core]
+    mergeoptions = --no-edit
