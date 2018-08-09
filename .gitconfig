@@ -1,6 +1,7 @@
 [user]
 	name = mikescar
 	email = mike@tenthpeak.us
+	signingkey = xxxxxxxxxxxxxxxx
 [alias]
     co = checkout
     ci = commit
@@ -34,3 +35,5 @@
     default = simple
 [core]
     mergeoptions = --no-edit
+[commit]
+	gpgsign = true
