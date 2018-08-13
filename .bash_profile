@@ -1,8 +1,6 @@
 export EDITOR=/usr/bin/vim
 
-. ~/bin/.colors
-. ~/bin/git-completion.sh
-. ~/bin/git-helper.sh
+. ~/bin/colors.sh
 . ~/bin/aliases.sh
 . ~/bin/preferences.sh
 

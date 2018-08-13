@@ -1,8 +1,7 @@
 export EDITOR=/usr/bin/vim
 
-# Make these available to all users logged in
-#   Heroku user will not be root but we still want to have these niceties
-. $PREFERENCES_DIR/.colors
+# Make these available to all logged-in users
+. $PREFERENCES_DIR/colors.sh
 . $PREFERENCES_DIR/aliases.sh
 
 # If not running interactively, don't do anything
