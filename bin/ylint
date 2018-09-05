@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+
+YAML.load_file(ARGV[0])
+
