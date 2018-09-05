@@ -2,7 +2,7 @@ export EDITOR=/usr/bin/vim
 
 . ~/bin/colors.sh
 . ~/bin/aliases.sh
-. ~/bin/git*.sh
+. ~/bin/git*sh
 . ~/bin/preferences.sh
 
 PATH=$HOME/bin:/usr/local/sbin:$PATH:`yarn global bin`

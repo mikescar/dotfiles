@@ -1,7 +1,11 @@
 # General aliases
 
+alias gpgexport='gpg --armor --export'
+
 alias drma='docker rm $(docker ps -a -q)'
 alias dsa='docker stop $(docker ps -a -q)'
+
+alias npx='PATH=$(npm bin):$PATH'
 
 alias h='heroku'
 alias hl='heroku logs -t'
@@ -56,6 +60,6 @@ alias gcm='git co master'
 alias sr='time spring rspec'
 alias srf='time spring rspec --only-failures'
 alias ssa='ssh-add ~/.ssh/id_rsa'
-alias hpr='hub pull-request -b develop'
+alias hpr='hub pull-request'
 alias ci='hub ci-status'
 alias prunelocal='git branch | grep -v develop | grep -v master | xargs git branch -D'
