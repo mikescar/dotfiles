@@ -1,11 +1,17 @@
 # General aliases
 
+alias gc='gcloud'
+alias kc='kubectl'
+
 alias gpgexport='gpg --armor --export'
 
+alias di='docker images'
 alias drma='docker rm $(docker ps -a -q)'
 alias dsa='docker stop $(docker ps -a -q)'
 
 alias npx='PATH=$(npm bin):$PATH'
+
+alias py='python'
 
 alias h='heroku'
 alias hl='heroku logs -t'
@@ -48,7 +54,6 @@ alias ggi='git grep -in'
 alias gl='git lg'
 alias gll='git lc | grep -vi "merge"'
 alias gp='git pull --prune'
-alias gc='git co'
 alias gcp='git cherry-pick'
 alias gpu='git push'
 alias gput='git push --tags'
