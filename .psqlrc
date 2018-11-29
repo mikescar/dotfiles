@@ -1,4 +1,4 @@
-\set PROMPT1 '%M %n@%/%R%# '
+\set PROMPT1 '%M %n@%/%R% [%`date +%H:%M:%S`]>\n'
 \set PROMPT2 '[more] %R > '
 \set HISTSIZE 10000
 
