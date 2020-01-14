@@ -6,8 +6,10 @@ alias kc='kubectl'
 alias gpgexport='gpg --armor --export'
 
 alias di='docker images'
+alias dip='docker image prune -f '
 alias drma='docker rm $(docker ps -a -q)'
 alias dsa='docker stop $(docker ps -a -q)'
+alias drmi='docker rmi'
 
 alias npx='PATH=$(npm bin):$PATH'
 
