@@ -35,4 +35,5 @@
   mergeoptions = --no-edit
 [push]
   default = simple
-
+[rerere]
+  enabled = true
