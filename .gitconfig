@@ -1,18 +1,17 @@
 [user]
-	name = mikescar
-	email = mike@tenthpeak.us
-	signingkey = xxxxxxxxxxxxxxxx
+  name = mikescar
+  email = mike@tenthpeak.us
 [alias]
-    co = checkout
-    ci = commit
-    csv = log --date=iso --pretty=format:'"%an","%ad","%s"'
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    l  = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    lc  = log --pretty=format:' -%d %s' --abbrev-commit --date=relative
-    cs = commit -s
-    assume   = update-index --assume-unchanged
-    unassume = update-index --no-assume-unchanged
-    assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+  assume   = update-index --assume-unchanged
+  assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+  ci = commit
+  co = checkout
+  cs = commit -s
+  csv = log --date=iso --pretty=format:'"%an","%ad","%s"'
+  l  = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lc  = log --pretty=format:' -%d %s' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  unassume = update-index --no-assume-unchanged
 [color]
   branch = auto
   diff = auto
@@ -22,18 +21,18 @@
   local = yellow
   remote = green
 [color "diff"]
-  meta = yellow bold
   frag = magenta bold
-  old = red bold
+  meta = yellow bold
   new = green bold
+  old = red bold
 [color "status"]
   added = yellow
   changed = green
   untracked = cyan
-
-[push]
-    default = simple
-[core]
-    mergeoptions = --no-edit
 [commit]
-	gpgsign = true
+  pgsign = true
+[core]
+  mergeoptions = --no-edit
+[push]
+  default = simple
+
