@@ -1,19 +1,10 @@
 # General aliases
 
-alias gc='gcloud'
-alias kc='kubectl'
-
-alias gpgexport='gpg --armor --export'
-
 alias di='docker images'
 alias dip='docker image prune -f '
 alias drma='docker rm $(docker ps -a -q)'
 alias dsa='docker stop $(docker ps -a -q)'
 alias drmi='docker rmi'
-
-alias npx='PATH=$(npm bin):$PATH'
-
-alias py='python'
 
 alias h='heroku'
 alias hl='heroku logs -t'
@@ -39,10 +30,6 @@ alias memrestart="mstop && mstart"
 alias rdm="rake db:migrate && rake db:migrate RAILS_ENV=test"
 alias migra="rake db:migrate && rake db:migrate RAILS_ENV=test"
 alias migrasafe="rake db:migrate && rake db:migrate RAILS_ENV=test && git co db"
-alias npmstart='npm run defuck; npm run develop'
-
-alias rc='rubocop'
-alias rca='rubocop -a --only'
 
 # git
 alias s='git status '
@@ -60,13 +47,12 @@ alias gcp='git cherry-pick'
 alias gpu='git push'
 alias gput='git push --tags'
 alias gpub='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
-alias gpus='git push stage develop:master'
+alias gpus='git push stage develop:main'
 alias gr='cd $(git rev-parse --show-cdup)'
-alias gcd='git co develop'
-alias gcm='git co master'
-alias sr='time spring rspec'
-alias srf='time spring rspec --only-failures'
+alias gcm='git co main'
+alias r='time rspec'
+alias srf='time rspec --only-failures'
 alias ssa='ssh-add ~/.ssh/id_rsa'
 alias hpr='hub pull-request'
 alias ci='hub ci-status'
-alias prunelocal='git branch | grep -v develop | grep -v master | xargs git branch -D'
+alias prunelocal='git branch | grep -v main | xargs git branch -D'
